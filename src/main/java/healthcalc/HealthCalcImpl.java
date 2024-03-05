@@ -27,10 +27,32 @@ public class HealthCalcImpl implements HealthCalc {
 
     @Override
     public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'basalMetabolicRate'");
+        if (height <= 0) {
+            throw new Exception("La altura indicada es incorrecta");
+        }
+        if (weight <= 0) {
+            throw new Exception("El peso indicado no es válido");
+        }
+
+        if (age < 0) {
+            throw new Exception("La edad indicada no es válida");
+        }
+
+        switch (gender) {
+            case 'm':
+                return 10 * weight + 6.25f * height - 5 * age + 5;
+            case 'w':
+                float result = 10 * weight + 6.25f * height - 5 * age - 161;
+                if (result < 0) {
+                    throw new Exception(
+                            "La combinación de valores indicados para mujer, generan un valor negativo de tasa metabólica");
+                } else {
+                    return result;
+                }
+            default:
+                throw new Exception("El género indicado es incorrecto");
+        }
+
     }
-
-
 
 }
