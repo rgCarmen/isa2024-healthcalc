@@ -5,7 +5,7 @@
       <li><a href="#descripcion">Descripción</a></li>
       <li><a href="#casos_prueba">Casos de Prueba</a></li>
       <li><a href="#test">Ejecución Test</a></li>
-      <li><a>Commits</a></li>
+      <li><a href="#commits">Estado Registro de Commits</a></li>
     </ol>
 </details>
 
@@ -55,3 +55,9 @@ El resultado de la ejecución es el siguiente:
 ![Captura de pantalla 2024-03-06 171310](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/82374776-31a3-4212-bac5-eb3b6dc2b2aa)
 
 <a name="test"></a>
+
+## :calendar: Registro de Commits
+![image](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/8b16b282-a45f-49db-b6b9-1bc35ffad7f8)
+
+
+<a name="commits"> </a>
