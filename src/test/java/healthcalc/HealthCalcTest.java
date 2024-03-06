@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Random;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,12 +17,11 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class HealthCalcTest {
 	private HealthCalc hc;
 
-	/*
-	 * @BeforeEach
-	 * public void init() {
-	 * hc = new HealthCalcImpl();
-	 * }
-	 */
+	@BeforeEach
+	public void init() {
+		hc = new HealthCalcImpl();
+	}
+
 	@ParameterizedTest
 	@CsvSource({ "-1060, 'm'", "0, 'w'",
 			"-1, 'm'", "-100, 'w'", "0, 'm'" })
