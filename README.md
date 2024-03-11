@@ -12,11 +12,12 @@
 
 
 ## :memo: Descripción
+<a name="descripcion"></a>
 En este repositorio se va a realizar un práctica relacionada con el desarrollo de una calculadora de salud. A partir de ciertos parámetros, tales como altura, género, peso o edad, se calcularán medidas como el peso ideal o la tasa metabólica basas. Se pide implementar una interfaz proporcionada como la realización de test para los métodos. 
 
 Además del desarrollo de la calculadora, esta práctica aborda el uso de herramientas como Maven y Git.
 
-<a name="descripcion"></a>
+
 
 ## 🔍 Casos de Prueba
 ###### Realizaremos casos de prueba para cada uno de los métodos a implementar
@@ -35,6 +36,7 @@ Además del desarrollo de la calculadora, esta práctica aborda el uso de herram
 
 
 #### **Test para el método basalMetabolicRate()**
+<a name="casos_prueba"></a>  :pushpin: En la implementación de ambos métodos, no se establece un valor máximo para <i>height</i>, <i>weight</i> y <i>age</i>.
 <ol>
 <li> Se realizaran para este método test similares a test 1 y test 2 para el método  <i>idealWeight()</i> , para comprobar que se lanza una excepción cuando <i>height</i> o <i>gender</i> son incorrectos. </li>
 <li>Siendo el resto de entradas válidas, el valor de  <i>weight</i>  no es válido, es negativo o 0. Se espera una excepción. </li> 
@@ -45,19 +47,19 @@ Además del desarrollo de la calculadora, esta práctica aborda el uso de herram
   </ul></li>
 <li> Con entradas válidas y iguales a excepción de  <i>gender</i> , se espera que los resultados siempre sean de 166 unidades menor en mujeres que en hombres.</li>
 </ol>
-<a name="casos_prueba"></a>  :pushpin: En la implementación de ambos métodos, no se establece un valor máximo para <i>height</i>, <i>weight</i> y <i>age</i>.
+
 
 ## :white_check_mark: Ejecución de los test
+<a name="test"></a>
 He implementado 14 test, algunos de ellos parametrizados para probar con varias entradas distintas.
 
 El resultado de la ejecución es el siguiente:
+![Captura de pantalla 2024-03-11 085039](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/8eb1e0c7-c24b-4824-b27a-fc4793e041bd)
 
 ![Captura de pantalla 2024-03-06 171310](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/82374776-31a3-4212-bac5-eb3b6dc2b2aa)
 
-<a name="test"></a>
 
 ## :calendar: Registro de Commits
+<a name="commits"> </a>
 ![image](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/8b16b282-a45f-49db-b6b9-1bc35ffad7f8)
 
-
-<a name="commits"> </a>
