@@ -13,7 +13,7 @@
 
 ## :memo: Descripción
 <a name="descripcion"></a>
-En este repositorio se va a realizar un práctica relacionada con el desarrollo de una calculadora de salud. A partir de ciertos parámetros, tales como altura, género, peso o edad, se calcularán medidas como el peso ideal o la tasa metabólica basas. Se pide implementar una interfaz proporcionada como la realización de test para los métodos. 
+En este repositorio se va a realizar un práctica relacionada con el desarrollo de una calculadora de salud. A partir de ciertos parámetros, tales como altura, género, peso o edad, se calcularán medidas como el peso ideal o la tasa metabólica basal. Se pide implementar una interfaz proporcionada como la realización de test para los métodos. 
 
 Además del desarrollo de la calculadora, esta práctica aborda el uso de herramientas como Maven y Git.
 
