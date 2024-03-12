@@ -1,22 +1,29 @@
 # Health calculator
 <details>
   <summary>Tabla de Contenido</summary>
-    <ol>
-      <li><a href="#descripcion">Descripción</a></li>
-      <li><a href="#casos_prueba">Casos de Prueba</a></li>
-      <li><a href="#test">Ejecución Test</a></li>
-      <li><a href="#commits">Estado Registro de Commits</a></li>
-    </ol>
+  <ol>
+    <li><a href="#practica1">Práctica1</a>
+      <ol> <li><a href="#descripcion">Descripción</a></li>
+        <li><a href="#casos_prueba">Casos de Prueba</a></li>
+        <li><a href="#test">Ejecución Test</a></li>
+        <li><a href="#commits">Estado Registro de Commits</a></li></ol> </li>
+    <li><a href="#practica2">Práctica2</a></li>
+      <ol> <li><a href="#descripcion2">Descripción</a>
+        <li><a href="#diagrama">Diagrama Casos de Uso</a></li>
+        <li><a href="#test">Especificación Casos de Uso</a></li>
+  </ol>
 </details>
 
+---
 
+# Práctica 1 
+<a name="practica1"></a>
 
 ## :memo: Descripción
 <a name="descripcion"></a>
-En este repositorio se va a realizar un práctica relacionada con el desarrollo de una calculadora de salud. A partir de ciertos parámetros, tales como altura, género, peso o edad, se calcularán medidas como el peso ideal o la tasa metabólica basas. Se pide implementar una interfaz proporcionada como la realización de test para los métodos. 
+En este repositorio se va a realizar un práctica relacionada con el desarrollo de una calculadora de salud. A partir de ciertos parámetros, tales como altura, género, peso o edad, se calcularán medidas como el peso ideal o la tasa metabólica basal. Se pide implementar una interfaz proporcionada como la realización de test para los métodos. 
 
 Además del desarrollo de la calculadora, esta práctica aborda el uso de herramientas como Maven y Git.
-
 
 
 ## 🔍 Casos de Prueba
@@ -58,8 +65,17 @@ El resultado de la ejecución es el siguiente:
 
 ![Captura de pantalla 2024-03-06 171310](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/82374776-31a3-4212-bac5-eb3b6dc2b2aa)
 
-
 ## :calendar: Registro de Commits
 <a name="commits"> </a>
 ![Captura de pantalla 2024-03-11 141856](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/452f7e99-266c-48c7-8a53-bb5c8b0adc77)
 
+---
+# Práctica 2
+<a name="practica2"></a>
+## :memo: Descripción
+<a name="descripcion2"></a>
+En este práctica se abordarán el desarrollo del diagrama de casos de usos de este proyecto junto con la especificación de uno de esos casos de uso.
+## :bust_in_silhouette: Diagrama Casos de Uso
+<a name="diagrama"></a>
+
+![Use Case Diagram](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/c352783f-d8b7-470a-a812-790f380dcc48)
