@@ -10,7 +10,7 @@
     <li><a href="#practica2">Práctica2</a></li>
       <ol> <li><a href="#descripcion2">Descripción</a>
         <li><a href="#diagrama">Diagrama Casos de Uso</a></li>
-        <li><a href="#test">Especificación Casos de Uso</a></li>
+        <li><a href="#especificacion">Especificación Casos de Uso</a></li>
   </ol>
 </details>
 
@@ -79,3 +79,30 @@ En este práctica se abordarán el desarrollo del diagrama de casos de usos de e
 <a name="diagrama"></a>
 
 ![Use Case Diagram](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/c352783f-d8b7-470a-a812-790f380dcc48)
+
+## 📄Especificación Caso de Uso
+<a name="especificacion"></a>
+**Caso de Uso**
+```
+Nombre: Calcular IdealWeight
+Stakeholder e intereses:
+	Usario : obtener el peso ideal.
+Actor principal: Usuario
+Alcance: Calculadora de Salud
+Nivel de abstracción: user-goal
+Precondiciones:Los parámetros introducidos son válido.
+Garantía mínima: Se recibe algún tipo de resultado o mensaje.
+Garantía de Éxilo: Se obtiene un resultado correcto.
+Triger: El usuario indica que quiere calcular un peso ideal.
+Escenario Principal:
+1. El sistema válida que los valor de los parámetros introducidos son correctos, height y gender.
+2. El sistema calcula el peso mediante la fórmula y según los parámetros indicados.
+3. El sistema comprueba que el resultado es positivo.
+4. El sistema devuelve el resultado al usuario.
+Extensiones:
+1b. El sistema detecta que alguno de los párametros no es válido.
+	1b1. El sistema indica que los parámetros no son válidos y pide volver a introducirlos. Vuelve al paso 1.
+3b. El sistema detecta que el resultado es negativo, no es válido.
+	3b1. El sistema indica que los parámetros introducidos generan un peso negativo.
+	3b.2 El sistema pide al usuario introducir los parámetros de nuevo y vuelve al paso 1.
+```
