@@ -26,8 +26,8 @@ public class StepDefinitions {
 			exception= true;
 		}
 	}
-	@Then("the system raise an exception")
-	public void the_system_raise_an_exception() {
+	@Then("the system raises an exception")
+	public void the_system_raises_an_exception() {
 		assertTrue(exception);
 	}
 	
@@ -55,6 +55,62 @@ public class StepDefinitions {
 	}
 	@Then("the system return a feasible result {string}")
 	public void the_system_return_a_feasible_result(String string) {
+		assertEquals(Float.parseFloat(string), result);
+	}
+	
+	
+	//basal Metabolic Rate
+	@When("I compute the basal metabolic rate of an invalid hight {int}")
+	public void i_compute_the_basal_metabolic_rate_of_an_invalid_hight(Integer int1) {
+		try {
+			calc.basalMetabolicRate(50, int1, 'm', 5);
+		}catch(Exception e) {
+			exception= true;
+		}
+	}
+	
+	@When("I compute the basal metabolic rate of an invalid gender {string}")
+	public void i_compute_the_basal_metabolic_rate_of_an_invalid_gender_h(String string) {
+		try {
+			calc.basalMetabolicRate(50, 160, string.toCharArray()[0], 5);
+		}catch(Exception e) {
+			exception= true;
+		}
+	}
+	
+	@When("I compute the basal metabolic rate of a negative age {int}")
+	public void i_compute_the_basal_metabolic_rate_of_a_negative_age(Integer int1) {
+		try {
+			calc.basalMetabolicRate(50, 160, 'w', int1);
+		}catch(Exception e) {
+			exception= true;
+		}
+	}
+	
+	@When("I compute the basal metabolic rate of an invalid weight {int}")
+	public void i_compute_the_basal_metabolic_rate_of_an_invalid_weight(Integer int1) {
+		try {
+			calc.basalMetabolicRate(int1, 160, 'w', 34);
+		}catch(Exception e) {
+			exception= true;
+		}
+	}
+	
+	@When("I compute the basal metabolic rate of gender {string} with a combination of height {int}, weight {int} and age {int} that result is a negative weight")
+	public void i_compute_the_basal_metabolic_rate_and_result_is_a_negative_weight(String string, Integer int1, Integer int2, Integer int3) {
+		try {
+			calc.basalMetabolicRate(int2, int1, string.toCharArray()[0], int3);
+		}catch(Exception e) {
+			exception= true;
+		}
+	}
+	
+	@When("I compute the basal metabolic rate for the given valid parameters {int} , {int} , {string} , {int}")
+	public void i_compute_the_basal_metabolic_rate_for_the_given_valid_parameters(Integer int1, Integer int2, String string, Integer int3) throws Exception {
+		result=calc.basalMetabolicRate(int1, int2, string.toCharArray()[0], int3);
+	}
+	@Then("the system returns a valid result {string}")
+	public void the_system_returns_a_valid_result(String string) {
 		assertEquals(Float.parseFloat(string), result);
 	}
 }

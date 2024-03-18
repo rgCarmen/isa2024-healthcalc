@@ -25,7 +25,7 @@ I want to calculate the ideal weight according to the parameters entered so that
   Scenario Outline: Invalid Height
     Given I have an health calculator
     When I compute the ideal weight for negative height <h>
-    Then the system raise an exception
+    Then the system raises an exception
     
    	Examples: 
       | h |
@@ -37,7 +37,7 @@ I want to calculate the ideal weight according to the parameters entered so that
   Scenario Outline: Invalid Gender
     Given I have an health calculator
     When I compute the ideal weight for an invalid gender <g>
-    Then the system raise an exception
+    Then the system raises an exception
     
    	Examples: 
       | g |
@@ -49,7 +49,7 @@ I want to calculate the ideal weight according to the parameters entered so that
   Scenario Outline: Negative Weight Result
     Given I have an health calculator
     When I compute the ideal weight for gender <g> and height <h> and gives a negative result
-    Then the system raise an exception
+    Then the system raises an exception
     
    	Examples: 
       | g | h |
@@ -59,7 +59,7 @@ I want to calculate the ideal weight according to the parameters entered so that
       |'w'| 30|
       
 	@tag4
-  Scenario Outline: Negative Weight Result
+  Scenario Outline: Valid Paramenter Feasiable Result
     Given I have an health calculator
     When I compute the ideal weight for gender <g> and height <h>
     Then the system return a feasible result <value>
