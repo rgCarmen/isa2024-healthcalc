@@ -1,16 +1,22 @@
 # Health calculator
 <details>
   <summary>Tabla de Contenido</summary>
-    <ol>
-      <li><a href="#descripcion">Descripción</a></li>
-      <li><a href="#casos_prueba">Casos de Prueba</a></li>
-      <li><a href="#test">Ejecución Test</a></li>
-      <li><a href="#commits">Estado Registro de Commits</a></li>
-    </ol>
+  <ol>
+    <li><a href="#practica1">Práctica1</a>
+      <ol> <li><a href="#descripcion">Descripción</a></li>
+        <li><a href="#casos_prueba">Casos de Prueba</a></li>
+        <li><a href="#test">Ejecución Test</a></li>
+        <li><a href="#commits">Estado Registro de Commits</a></li></ol> </li>
+    <li><a href="#practica3">Práctica3</a></li>
+      <ol> <li><a href="#descripcion3">Descripción</a>
+        <li><a href="#userstory">User Stories</a></li>
+  </ol>
 </details>
 
-
-
+---
+# Práctica 1
+<a name="practica1"></a>
+[Ver Practica 1](../../tree/practica1)
 ## :memo: Descripción
 <a name="descripcion"></a>
 En este repositorio se va a realizar un práctica relacionada con el desarrollo de una calculadora de salud. A partir de ciertos parámetros, tales como altura, género, peso o edad, se calcularán medidas como el peso ideal o la tasa metabólica basas. Se pide implementar una interfaz proporcionada como la realización de test para los métodos. 
@@ -63,3 +69,85 @@ El resultado de la ejecución es el siguiente:
 <a name="commits"> </a>
 ![Captura de pantalla 2024-03-11 141856](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/452f7e99-266c-48c7-8a53-bb5c8b0adc77)
 
+---
+# Práctica 2
+[Ver práctica 2](../../tree/practica2)
+
+---
+# Práctica 3
+<a name="practica3"></a>
+## :memo: Descripción
+<a name="descripcion3"></a>
+En esta tercera práctica se tratarán las historias de usuario junto a sus escenarios. A partir de ellas, se implementarán test utilizando BDD, que nos ayudará a garantizar que se cumplen los requisitos de nuestro sistema.
+
+## 🎨 User Stories
+<a name="userstory"> </a>
+A continuación se muestran las historias de ususario de los dos casos de uso principales de la calculadora:
+```
+User Story: Calculate Ideal Weight
+As a user of the health calculator
+I want to calculate the ideal weight according to the parameters entered
+So that I can know the resulting ideal weight.
+
+Accepting Criteria
+
+Scenario: Invalid Height
+Given I have an health calculator
+When I compute the ideal weight with a negative or 0 height
+Then the system raise an exception
+
+Scenario: Invalid Gender
+Given I have an health calculator
+When  I compute the ideal weight for an invalid gender
+Then the system raises an exception
+
+Scenario: Negative Result for Weight 
+Given I have an health calculator
+When I compute the ideal weight and the result leads to a negative weight
+Then the system raise an exception.
+
+Scenario: Valid parameters
+Given  I have an health calculator
+When I compute the ideal weight for the given valid parameters
+Then the system returns a valid result.
+```
+
+```
+User Story: Calculate basalMetabolicRate
+
+As a user of the health calculator
+I want to calculate the basal metabolic rate according to the parameters entered
+So that I can know the resulting of this health measurement.
+
+Accepting Criteria
+
+Scenario: Invalid Height
+Given I have an health calculator
+When I compute the  basal metabolic rate  with a negative or 0 height
+Then the system raise an exception
+
+Scenario: Invalid Gender
+Given I have an health calculator
+When  I compute the basal metabolic rate for an invalid gender
+Then the system raises an exception
+
+Scenario: Invalid Age
+Given I have an health calculator
+When  I compute the basal metabolic rate for a negative age
+Then the system raises an exception
+
+Scenario: Invalid Weight
+Given I have an health calculator
+When  I compute the basal metabolic rate for a negative or 0 weight
+Then the system raises an exception
+
+Scenario: Negative Result for Weight (only possible for women)
+Given I have an health calculator
+When I compute the basal metabolic rate for a woman with a combination of height, weight and age that result in a negative weight
+Then the system raise an exception.
+
+Scenario: Given valid parameters
+Given  I have an health calculator
+When I compute the basal metabolic rate for the given valid parameters
+Then the system returns a valid result.
+```
