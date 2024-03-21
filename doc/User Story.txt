@@ -1,0 +1,70 @@
+User Story: Calculate Ideal Weight
+
+As a user of the health calculator
+I want to calculate the ideal weight according to the parameters entered
+So that I can know the resulting ideal weight.
+
+Accepting Criteria
+
+Scenario: Invalid Height
+Given I have an health calculator
+When I compute the ideal weight with a negative or 0 height
+Then the system raise an exception
+
+Scenario: Invalid Gender
+Given I have an health calculator
+When  I compute the ideal weight for an invalid gender
+Then the system raises an exception
+
+
+Scenario: Negative Result for Weight 
+Given I have an health calculator
+When I compute the ideal weight and the result leads to a negative weight
+Then the system raise an exception.
+
+Scenario: Valid parameters
+Given  I have an health calculator
+When I compute the ideal weight for the given valid parameters
+Then the system returns a valid result.
+
+
+
+User Story: Calculate basalMetabolicRate
+
+As a user of the health calculator
+I want to calculate the basal metabolic rate according to the parameters entered
+So that I can know the resulting of this health measurement.
+
+Accepting Criteria
+
+Scenario: Invalid Height
+Given I have an health calculator
+When I compute the  basal metabolic rate  with a negative or 0 height
+Then the system raise an exception
+
+Scenario: Invalid Gender
+Given I have an health calculator
+When  I compute the basal metabolic rate for an invalid gender
+Then the system raises an exception
+
+Scenario: Invalid Age
+Given I have an health calculator
+When  I compute the basal metabolic rate for a negative age
+Then the system raises an exception
+
+Scenario: Invalid Weight
+Given I have an health calculator
+When  I compute the basal metabolic rate for a negative or 0 weight
+Then the system raises an exception
+
+Scenario: Negative Result for Weight (only possible for women)
+Given I have an health calculator
+When I compute the basal metabolic rate for a woman with a combination of height, weight and age that result in a negative weight
+Then the system raise an exception.
+
+Scenario: Given valid parameters
+Given  I have an health calculator
+When I compute the basal metabolic rate for the given valid parameters
+Then the system returns a valid result.
+
+
