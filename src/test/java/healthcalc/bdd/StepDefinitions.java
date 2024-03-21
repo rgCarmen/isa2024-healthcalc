@@ -18,6 +18,8 @@ public class StepDefinitions {
 	public void i_have_an_health_calculator() {
 	    calc= new HealthCalcImpl();
 	}
+	
+	//idealWeight
 	@When("I compute the ideal weight for negative height {int}")
 	public void i_compute_the_ideal_weight_for_negative_height(Integer int1) {
 		try {
@@ -26,6 +28,7 @@ public class StepDefinitions {
 			exception= true;
 		}
 	}
+
 	@Then("the system raises an exception")
 	public void the_system_raises_an_exception() {
 		assertTrue(exception);
@@ -58,10 +61,9 @@ public class StepDefinitions {
 		assertEquals(Float.parseFloat(string), result);
 	}
 	
-	
-	//basal Metabolic Rate
-	@When("I compute the basal metabolic rate of an invalid hight {int}")
-	public void i_compute_the_basal_metabolic_rate_of_an_invalid_hight(Integer int1) {
+	// basal Metabolic Rate
+	@When("I compute the basal metabolic rate for an invalid height {int}")
+	public void i_compute_the_basal_metabolic_rate_for_an_invalid_height(Integer int1) {
 		try {
 			calc.basalMetabolicRate(50, int1, 'm', 5);
 		}catch(Exception e) {
@@ -69,8 +71,8 @@ public class StepDefinitions {
 		}
 	}
 	
-	@When("I compute the basal metabolic rate of an invalid gender {string}")
-	public void i_compute_the_basal_metabolic_rate_of_an_invalid_gender_h(String string) {
+	@When("I compute the basal metabolic rate for an invalid gender {string}")
+	public void i_compute_the_basal_metabolic_rate_for_an_invalid_gender_h(String string) {
 		try {
 			calc.basalMetabolicRate(50, 160, string.toCharArray()[0], 5);
 		}catch(Exception e) {
@@ -78,8 +80,8 @@ public class StepDefinitions {
 		}
 	}
 	
-	@When("I compute the basal metabolic rate of a negative age {int}")
-	public void i_compute_the_basal_metabolic_rate_of_a_negative_age(Integer int1) {
+	@When("I compute the basal metabolic rate for a negative age {int}")
+	public void i_compute_the_basal_metabolic_rate_for_a_negative_age(Integer int1) {
 		try {
 			calc.basalMetabolicRate(50, 160, 'w', int1);
 		}catch(Exception e) {
@@ -87,8 +89,8 @@ public class StepDefinitions {
 		}
 	}
 	
-	@When("I compute the basal metabolic rate of an invalid weight {int}")
-	public void i_compute_the_basal_metabolic_rate_of_an_invalid_weight(Integer int1) {
+	@When("I compute the basal metabolic rate for an invalid weight {int}")
+	public void i_compute_the_basal_metabolic_rate_for_an_invalid_weight(Integer int1) {
 		try {
 			calc.basalMetabolicRate(int1, 160, 'w', 34);
 		}catch(Exception e) {
@@ -96,7 +98,7 @@ public class StepDefinitions {
 		}
 	}
 	
-	@When("I compute the basal metabolic rate of gender {string} with a combination of height {int}, weight {int} and age {int} that result is a negative weight")
+	@When("I compute the basal metabolic rate of gender {string} with a combination of height {int}, weight {int} and age {int} whose result is a negative weight")
 	public void i_compute_the_basal_metabolic_rate_and_result_is_a_negative_weight(String string, Integer int1, Integer int2, Integer int3) {
 		try {
 			calc.basalMetabolicRate(int2, int1, string.toCharArray()[0], int3);

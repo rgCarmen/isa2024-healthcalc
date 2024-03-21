@@ -21,9 +21,9 @@ Feature: Calculate Basal Metabolic Rate
   As a user of the health calculatorI want to calculate the basal metabolic rate according to the parameters entered so that I can know the resulting of this health measurement
 
   @tag1
-  Scenario Outline: Invalid Hight
+  Scenario Outline: Invalid Height
     Given  I have an health calculator
-    When I compute the basal metabolic rate of an invalid hight <h>
+    When I compute the basal metabolic rate for an invalid height <h>
     Then the system raises an exception
 
     Examples: 
@@ -35,7 +35,7 @@ Feature: Calculate Basal Metabolic Rate
    @tag2
   Scenario Outline: Invalid Weight
     Given  I have an health calculator
-    When I compute the basal metabolic rate of an invalid gender <g>
+    When I compute the basal metabolic rate for an invalid gender <g>
     Then the system raises an exception
 
     Examples: 
@@ -47,7 +47,7 @@ Feature: Calculate Basal Metabolic Rate
   @tag3
   Scenario Outline: Invalid Age
     Given  I have an health calculator
-    When  I compute the basal metabolic rate of a negative age <a>
+    When  I compute the basal metabolic rate for a negative age <a>
     Then the system raises an exception
 
     Examples: 
@@ -59,7 +59,7 @@ Feature: Calculate Basal Metabolic Rate
    @tag4
   Scenario Outline: Invalid Weight
     Given  I have an health calculator
-    When I compute the basal metabolic rate of an invalid weight <w>
+    When I compute the basal metabolic rate for an invalid weight <w>
     Then the system raises an exception
 
     Examples: 
@@ -71,7 +71,7 @@ Feature: Calculate Basal Metabolic Rate
 	@tag5      
 	Scenario Outline: Negative Result for Weight (only possible for women)
 		Given I have an health calculator
-		When I compute the basal metabolic rate of gender 'w' with a combination of height <h>, weight <w> and age <a> that result is a negative weight
+		When I compute the basal metabolic rate of gender 'w' with a combination of height <h>, weight <w> and age <a> whose result is a negative weight
 		Then the system raises an exception
 		
 		  Examples: 
