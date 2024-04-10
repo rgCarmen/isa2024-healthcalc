@@ -19,7 +19,7 @@ public class HealthCalcImpl implements HealthCalc {
                 throw new Exception("El género indicado es incorrecto");
         }
         if (result < 0) {
-            throw new Exception("La fórmula utilizada con la altura y género indicada da un peso negativo");
+            throw new Exception("La fórmula utilizada con la altura y género indicados da un peso negativo");
         }
         return result;
 
