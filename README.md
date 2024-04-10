@@ -2,14 +2,27 @@
 <details>
   <summary>Tabla de Contenido</summary>
     <ol>
-      <li><a href="#descripcion">Descripción</a></li>
-      <li><a href="#casos_prueba">Casos de Prueba</a></li>
-      <li><a href="#test">Ejecución Test</a></li>
-      <li><a href="#commits">Estado Registro de Commits</a></li>
+      <li><a href="#practica1">Práctica1</a>
+        <ol> <li><a href="#descripcion">Descripción</a></li>
+          <li><a href="#casos_prueba">Casos de Prueba</a></li>
+          <li><a href="#test">Ejecución Test</a></li>
+          <li><a href="#commits">Estado Registro de Commits</a></li></ol> </li>
+      <li><a href="#practica2">Práctica2</a></li>
+      <li><a href="#practica3">Práctica3</a></li>
+      <li><a href="#practica4">Práctica4</a>
+        <ol>
+          <li><a href="#diseño">Diseño del prototipo</a></li>
+          <li><a href="#interfaz">Desarrollo interfaz</a></li>
+        </ol>
+      </li>
+        
     </ol>
 </details>
 
-
+---
+# Práctica 1
+<a name="practica1"></a>
+[Ver Practica 1](../../tree/practica1)
 
 ## :memo: Descripción
 <a name="descripcion"></a>
@@ -62,4 +75,32 @@ El resultado de la ejecución es el siguiente:
 ## :calendar: Registro de Commits
 <a name="commits"> </a>
 ![Captura de pantalla 2024-03-11 141856](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/452f7e99-266c-48c7-8a53-bb5c8b0adc77)
+
+---
+# Práctica 2
+<a name="practica2"></a>
+[Ver práctica 2](../../tree/practica2)
+
+---
+
+---
+# Práctica 3
+<a name="practica3"></a>
+[Ver práctica 3](../../tree/practica3)
+
+---
+
+---
+# Práctica 4
+<a name="practica4"></a>
+## :paintbrush: Diseño del prototipo
+<a name="diseño"></a>
+![diseño_interfaz](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/599f7487-991c-45a3-a1f1-be5e6076f6a0)
+
+## :computer: Desarrollo de la interfaz
+<a name="interfaz"></a>
+
+<img width="744" alt="desarrollo_interfaz" src="https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/c08ba4ef-0abc-4198-a486-2641c3daa6fc">
+
+
 
