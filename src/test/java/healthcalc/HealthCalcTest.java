@@ -19,7 +19,8 @@ public class HealthCalcTest {
 
 	@BeforeEach
 	public void init() {
-		hc = new HealthCalcImpl();
+		//hc = new HealthCalcImpl();
+		hc=HealthCalcImpl.getCalcImpl();
 	}
 
 	@ParameterizedTest
