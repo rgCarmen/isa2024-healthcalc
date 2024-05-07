@@ -7,7 +7,7 @@ public class MensajeIngles extends MensajeDecorador {
     }
 
     @Override
-    public void mensaje(float altura, int peso, double result) {
+    protected void mensaje(float altura, int peso, double result) {
         System.out.println("The person with height "+altura+" meters and "+ peso/1000+" kg has a BMR of "+result);
     }
     

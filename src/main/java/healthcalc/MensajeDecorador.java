@@ -20,6 +20,6 @@ public abstract class MensajeDecorador implements HealthHospital {
         return calc.pesoIdeal(genero, altura);
     }
 
-    public abstract void mensaje(float altura, int peso, double result);
+    protected abstract void mensaje(float altura, int peso, double result);
     
 }
