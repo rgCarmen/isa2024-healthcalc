@@ -15,7 +15,11 @@
           <li><a href="#interfaz">Desarrollo interfaz</a></li>
         </ol>
       </li>
-        
+      <li><a href="#practica6">Práctica6</a>
+        <ol> <li><a href="#singelton">Patrón Singelton</a></li>
+            <li><a href="#hospital">Implementación Hospital Costal del Sol</a></li>
+        </ol>
+        </li>
     </ol>
 </details>
 
@@ -93,6 +97,8 @@ El resultado de la ejecución es el siguiente:
 ---
 # Práctica 4
 <a name="practica4"></a>
+[Ver Practica 4](../../tree/practica4)
+<a name="practica4"></a>
 ## :paintbrush: Diseño del prototipo
 <a name="diseño"></a>
 ![diseño_interfaz](https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/599f7487-991c-45a3-a1f1-be5e6076f6a0)
@@ -101,6 +107,38 @@ El resultado de la ejecución es el siguiente:
 <a name="interfaz"></a>
 
 <img width="744" alt="desarrollo_interfaz" src="https://github.com/rgCarmen/isa2024-healthcalc/assets/81189485/c08ba4ef-0abc-4198-a486-2641c3daa6fc">
+
+---
+
+---
+
+# Práctica 6. Patrones de diseño
+<a name="practica6"></a>
+[Ver Practica 6](../../tree/practica6)
+## 1️⃣ Patrón Singelton
+<a name="singelton"></a>
+Se ha aplicado un patrón singelton a la implementación de la calculadora <code>HealthCalcImpl</code>.
+
+
+![](https://github.com/rgCarmen/isa2024-healthcalc/blob/practica6/design_patterns/UML_Singelton.png)
+
+## 🏥Hospital Costa del Sol
+<a name="hospital"></a>
+### Apartado A. 
+Para implementar la interfaz <code>HealthHospital</code> requerida reutilizando la calculadora ya implementada empleamos el patrón adaptador.
+
+
+![](https://github.com/rgCarmen/isa2024-healthcalc/blob/practica6/design_patterns/UML_adaptador.png)
+### Apartado B.
+Para implementar la interfaz para recoger las estadísticas <code>HealthStats</code>, se ha empleado el patrón proxy.
+
+
+![](https://github.com/rgCarmen/isa2024-healthcalc/blob/practica6/design_patterns/UML__proxy3b.png)
+### Apartado C.
+Para implementar una versión de la calculadora america y una europea reutilizando todo lo anterior, empleamos el patrón decorador. Para que se muestre el mensaje requerido empleamos también otro decorador.
+
+
+![](https://github.com/rgCarmen/isa2024-healthcalc/blob/practica6/design_patterns/UML_decoradores3c.png)
 
 
 
