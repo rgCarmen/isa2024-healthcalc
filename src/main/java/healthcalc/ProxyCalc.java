@@ -44,6 +44,10 @@ public class ProxyCalc implements HealthStats, HealthHospital{
             numW+=1;
         }
         this.numpatientIW +=1;
+        /*
+        Si se quiere añadir al peso medio el peso ideal calculado:
+        this.peso+=result;
+        */
         return result;
     }
 
