@@ -38,7 +38,7 @@ public class ProxyCalc implements HealthStats, HealthHospital{
     public int pesoIdeal(char genero, float altura) throws Exception {
         int result = calc.pesoIdeal(genero, altura);
         this.altura+=altura;
-        if (genero == 'M'){
+        if (genero == 'm'){
             numM+=1;
         }else{
             numW+=1;
