@@ -13,16 +13,16 @@ public class MainEjemplo {
         CalcAmericana ca= new CalcAmericana(mi);
         //uso calculadora americana
         System.out.println("CALCULADORA AMERICANA ->");
-        ca.bmr('m', 20, (float) 5.78, 108);
-        System.out.println("Peso Ideal: "+ca.pesoIdeal('m', (float) 5.78));
-        ca.bmr('w', 50, (float) 4.67, 81);
+        ca.bmr(Gender.MALE, 20, (float) 5.78, 108);
+        System.out.println("Peso Ideal: "+ca.pesoIdeal(Gender.MALE, (float) 5.78));
+        ca.bmr(Gender.FEMALE, 50, (float) 4.67, 81);
 
         CalcEuropea ce= new CalcEuropea(mi);
         //uso calculadora europea
         System.out.println();
         System.out.println("CALCULADORA EUROPEA ->");
-        System.out.println(ce.bmr('m', 20, (float) 1.78, 58000));
-        System.out.println("Peso Ideal"+ ce.pesoIdeal('m', (float)1.78));
+        System.out.println(ce.bmr(Gender.MALE, 20, (float) 1.78, 58000));
+        System.out.println("Peso Ideal"+ ce.pesoIdeal(Gender.MALE, (float)1.78));
 
         
         //estadísticas proxy (para ambas calculadoras americana y europea) se utilizan las unidades que emplea la interfaz HealthHospital

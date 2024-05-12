@@ -14,11 +14,11 @@ public interface HealthCalc {
 	 * For women: IW = height - 100 - (height - 150) / 2.5)
 	 *
 	 * @param height 	Height of the person (cm).
-	 * @param gender	Gender of the person ('m' or 'w').
+	 * @param gender	Gender of the person (Gender.MALE or Gender.FEMALE).
 	 * @return 		 	The ideal weight of the person (kg).
 	 * @throws Exception 
 	 */
-	public float idealWeight(int height, char gender) throws Exception;
+	public float idealWeight(int height, Gender gender) throws Exception;
 	
 	/**
 	 * Calculate the Basal Metabolic Rate (BMR) of a person with the following formula:
@@ -27,10 +27,10 @@ public interface HealthCalc {
 	 *   
 	 * @param weight	Weight of the person (kg).
 	 * @param height 	Height of the person (cm).
-	 * @param gender	Gender of the person ('m' or 'w').
+	 * @param gender	Gender of the person (Gender.MALE or Gender.FEMALE).
 	 * @param age		Age of the person.
 	 * @return	  		The Basal Metabolic Rate of the person.
 	 * @throws Exception
 	 */
-	public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception;
+	public float basalMetabolicRate(float weight, int height, Gender gender, int age) throws Exception;
 }

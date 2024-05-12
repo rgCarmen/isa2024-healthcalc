@@ -3,7 +3,7 @@ package healthcalc.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+import healthcalc.Gender;
 import healthcalc.HealthCalcImpl;
 
 public class Controlador implements ActionListener {
@@ -22,7 +22,7 @@ public class Controlador implements ActionListener {
 		if (comando.equals("Calcular Peso Ideal")) {
 			// idealWeight
 			int altura = vista.getAltura();
-			char genero= vista.getGenero();
+			Gender genero= vista.getGenero();
 			try {
 				float resultado = modelo.idealWeight(altura, genero);	
 				vista.setResultPI(resultado);
@@ -33,7 +33,7 @@ public class Controlador implements ActionListener {
 			
 		}else if(comando.equals("Calcular BMR")) {
 			int altura = vista.getAltura();
-			char genero= vista.getGenero();
+			Gender genero= vista.getGenero();
 			int edad= vista.getEdad();
 			float peso= vista.getPeso();
 			try {

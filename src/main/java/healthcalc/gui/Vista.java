@@ -12,6 +12,9 @@ import java.awt.GridLayout;
 import java.awt.LayoutManager;
 
 import javax.swing.border.LineBorder;
+
+import healthcalc.Gender;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.BorderFactory;
@@ -256,11 +259,11 @@ public class Vista extends JFrame{
 
 	}
 	
-	public char getGenero() {
+	public Gender getGenero() {
 		if(rdbtnMujer.isSelected()) {
-			return 'w';
+			return Gender.FEMALE;
 		}else{
-			return 'm';
+			return Gender.MALE;
 		}
 	}
 	

@@ -19,13 +19,13 @@ public class ProxyCalc implements HealthStats, HealthHospital{
     }
 
     @Override
-    public double bmr(char genero, int edad, float altura, int peso) throws Exception {
+    public double bmr(Gender genero, int edad, float altura, int peso) throws Exception {
         double result= calc.bmr(genero, edad, altura, peso);
         this.edad += edad;
         this.altura += altura;
         this.peso += peso;
         this.bmrtotal+= result;
-        if (genero == 'm'){
+        if (genero == Gender.MALE){
             numM+=1;
         }else{
             numW+=1;
@@ -35,10 +35,10 @@ public class ProxyCalc implements HealthStats, HealthHospital{
     }
 
     @Override
-    public int pesoIdeal(char genero, float altura) throws Exception {
+    public int pesoIdeal(Gender genero, float altura) throws Exception {
         int result = calc.pesoIdeal(genero, altura);
         this.altura+=altura;
-        if (genero == 'M'){
+        if (genero == Gender.MALE){
             numM+=1;
         }else{
             numW+=1;

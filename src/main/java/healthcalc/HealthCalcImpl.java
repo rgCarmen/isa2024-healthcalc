@@ -16,16 +16,16 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public float idealWeight(int height, char gender) throws Exception {
+    public float idealWeight(int height, Gender gender) throws Exception {
         float result;
         if (height <= 0) {
             throw new Exception("La altura indicada es incorrecta");
         }
         switch (gender) {
-            case 'm':
+            case MALE:
                 result = (height - 100) - ((height - 150) / 4f);
                 break;
-            case 'w':
+            case FEMALE:
                 result = (height - 100) - ((height - 150) / 2.5f);
                 break;
             default:
@@ -39,7 +39,7 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception {
+    public float basalMetabolicRate(float weight, int height, Gender gender, int age) throws Exception {
         if (height <= 0) {
             throw new Exception("La altura indicada es incorrecta");
         }
@@ -52,9 +52,9 @@ public class HealthCalcImpl implements HealthCalc {
         }
 
         switch (gender) {
-            case 'm':
+            case MALE:
                 return 10 * weight + 6.25f * height - 5 * age + 5;
-            case 'w':
+            case FEMALE:
                 float result = 10 * weight + 6.25f * height - 5 * age - 161;
                 if (result < 0) {
                     throw new Exception(
