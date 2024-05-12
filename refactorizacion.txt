@@ -1,0 +1,30 @@
+REFACTORIZACIONES
+
+====================================================================================================
+ Enum Gender
+(1) nombre
+Representación inadecuada del tipo de dato de la variable.
+
+(2) refactoring aplicado
+Modificación del tipo de datos de una variable.
+
+(3) tipo
+Refactoring de atributo
+
+(4) descripción de cambios
+Creación de la clase enumerada Gender que sustituirá en a char gender en la implementación de los métodos de la calculadora. 
+Ya que los valores que puede tomar este atributo son un conjunto fijo, hombre o mujer, es más adecuado utilizar Enum. Va a permitir también evitar posibles errores al introducir los parametros en la calculadora.
+
+(5) número de cambio 
+- cambiamos char por Gender (28 apariciones en 11 ficheros). 
+- reemplazar 'm' por Gender.MALE (35 en 7)
+- reemplazar 'w' por Gender.FEMALE (28 en 6)
+- reemplazar Gender. por nada en HealthCalcImpl.java para los switch (no funciona como Gender.FEMALE o Gender.MALE)
+y para los test parametrizados en HealthCalcTest.java
+- añadimos import healthcalc.Gender; en Controlador.java y Vista.java
+- eliminar test que prueban si la entrada de Gender es distinta a FEMALE o MALE.
+
+
+========================================================================================================
+
+Interfaz persona
