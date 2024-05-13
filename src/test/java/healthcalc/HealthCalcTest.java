@@ -29,7 +29,7 @@ public class HealthCalcTest {
 	@DisplayName("Entrada height en idealWeight() es inválida, se lanza excepción")
 	public void testIdealWeightInvalidHeight(int height, Gender gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			hc.idealWeight(height, gender);
+			hc.idealWeight(new PersonImpl(height, gender));
 		});
 
 	}
@@ -50,7 +50,7 @@ public class HealthCalcTest {
 	@DisplayName("Ambas entradas en idealWeight() son válidas, se espera un valor positivo")
 	public void testIdealWeightValidInputs(int height, Gender gender) throws Exception {
 		assertDoesNotThrow(() -> {
-			float result = hc.idealWeight(height, gender);
+			float result = hc.idealWeight(new PersonImpl(height, gender));
 			assertTrue(result > 0);
 		});
 
@@ -62,7 +62,7 @@ public class HealthCalcTest {
 	@DisplayName("Con valores de altura menores que 84 en hombre y 67 en mujer se espera que se lanze una excepción")
 	public void testIdealWeightNegative(int height, Gender gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			hc.idealWeight(height, gender);
+			hc.idealWeight(new PersonImpl(height, gender));
 		});
 
 	}
@@ -70,7 +70,7 @@ public class HealthCalcTest {
 	@Test
 	@DisplayName("Con una altura de 150 se debe obtener el mismo peso para hombres y mujeres.")
 	public void testIdealWeightEqualHeight150() throws Exception {
-		assertEquals(hc.idealWeight(150, Gender.FEMALE), hc.idealWeight(150, Gender.MALE));
+		assertEquals(hc.idealWeight(new PersonImpl(150, Gender.FEMALE)), hc.idealWeight(new PersonImpl(150, Gender.MALE)));
 
 	}
 
@@ -78,7 +78,7 @@ public class HealthCalcTest {
 	@DisplayName("Con el mismo valor de height, mayor que 150, el peso ideal debe ser menor en mujeres que en hombres.")
 	public void testIdealWeightEqualHeightM150() throws Exception {
 		int h = (new Random()).nextInt(151, 250);
-		assertTrue(hc.idealWeight(h, Gender.FEMALE) < hc.idealWeight(h, Gender.MALE));
+		assertTrue(hc.idealWeight(new PersonImpl(h, Gender.FEMALE)) < hc.idealWeight(new PersonImpl(h, Gender.MALE)));
 
 	}
 
@@ -86,7 +86,7 @@ public class HealthCalcTest {
 	@DisplayName("Con el mismo valor de height, menor que 150, el peso ideal debe ser mayor en mujeres que en hombres.")
 	public void testIdealWeightEqualHeightm150() throws Exception {
 		int h = (new Random()).nextInt(84, 150); // debe ser un valor que no genere valores negativos en ninguno
-		assertTrue(hc.idealWeight(h, Gender.FEMALE) > hc.idealWeight(h, Gender.MALE));
+		assertTrue(hc.idealWeight(new PersonImpl(h, Gender.FEMALE)) > hc.idealWeight(new PersonImpl(h, Gender.MALE)));
 
 	}
 
@@ -97,7 +97,7 @@ public class HealthCalcTest {
 	// asumimos valores de weight y age válidos
 	public void testBMRInvalidHeight(int height, Gender gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			hc.basalMetabolicRate(60, height, gender, 30);
+			hc.basalMetabolicRate(new PersonImpl(60, height, 30, gender));
 		});
 
 	}
@@ -117,7 +117,7 @@ public class HealthCalcTest {
 	@DisplayName("Entrada weight en basalMetabolicRate() no es mayor que 0, se espera Excepción")
 	public void testBMRInvalidWeight(int weight, Gender gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			hc.basalMetabolicRate(weight, 165, gender, 30);
+			hc.basalMetabolicRate(new PersonImpl(weight, 165, 30, gender));
 		});
 	}
 
@@ -126,7 +126,7 @@ public class HealthCalcTest {
 	@DisplayName("Entrada age en basalMetabolicRate() inválida , se espera Excepción")
 	public void testBMRInvalidAge(int age, Gender gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			hc.basalMetabolicRate(60, 165, gender, age);
+			hc.basalMetabolicRate(new PersonImpl(60, 165, age, gender));
 		});
 	}
 
@@ -136,7 +136,7 @@ public class HealthCalcTest {
 	@DisplayName("Todas las entradas de basalMetabolicRate son válidas, por lo que no se espera una Excepción")
 	public void testBMRValidInputs(int height, Gender gender, int weight, int age) throws Exception {
 		assertDoesNotThrow(() -> {
-			float result = hc.basalMetabolicRate(weight, height, gender, age);
+			float result = hc.basalMetabolicRate(new PersonImpl(weight, height, age, gender));
 			assertTrue(result > 0);
 		});
 	}
@@ -146,7 +146,7 @@ public class HealthCalcTest {
 	@DisplayName("Si el resultado para mujeres en basalMetabolicRate es negativo, se espera una Excepción")
 	public void testBMRWomenNegative(int height, int weight, int age) throws Exception {
 		assertThrows(Exception.class, () -> {
-			hc.basalMetabolicRate(weight, height, Gender.FEMALE, age);
+			hc.basalMetabolicRate(new PersonImpl(weight, height,age, Gender.FEMALE));
 		});
 	}
 
@@ -157,7 +157,7 @@ public class HealthCalcTest {
 		int h = r.nextInt(1, 170);
 		int w = r.nextInt(1, 600);
 		int a = r.nextInt(0, 130);
-		assertEquals(hc.basalMetabolicRate(w, h, Gender.MALE, a), hc.basalMetabolicRate(w, h, Gender.FEMALE, a) + 166);
+		assertEquals(hc.basalMetabolicRate(new PersonImpl(w, h, a, Gender.MALE)), hc.basalMetabolicRate(new PersonImpl(w, h, a, Gender.FEMALE)) + 166);
 
 	}
 

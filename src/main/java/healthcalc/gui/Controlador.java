@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import healthcalc.Gender;
 import healthcalc.HealthCalcImpl;
+import healthcalc.PersonImpl;
 
 public class Controlador implements ActionListener {
 	
@@ -24,7 +25,7 @@ public class Controlador implements ActionListener {
 			int altura = vista.getAltura();
 			Gender genero= vista.getGenero();
 			try {
-				float resultado = modelo.idealWeight(altura, genero);	
+				float resultado = modelo.idealWeight(new PersonImpl(altura, genero));	
 				vista.setResultPI(resultado);
 			} catch (Exception error) {
 				String msg= comando+": "+error.getMessage();
@@ -37,7 +38,8 @@ public class Controlador implements ActionListener {
 			int edad= vista.getEdad();
 			float peso= vista.getPeso();
 			try {
-				float resultado = modelo.basalMetabolicRate(peso, altura, genero, edad);	
+				float resultado = modelo.basalMetabolicRate(new PersonImpl(peso, altura, edad, genero) {
+				});	
 				vista.setResultBMR(resultado);
 			} catch (Exception error) {
 				String msg= comando+": "+error.getMessage();

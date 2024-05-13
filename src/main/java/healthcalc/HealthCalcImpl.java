@@ -16,8 +16,11 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public float idealWeight(int height, Gender gender) throws Exception {
+    public float idealWeight(Person person) throws Exception {
         float result;
+        float height= person.height();
+        Gender gender= person.gender();
+         
         if (height <= 0) {
             throw new Exception("La altura indicada es incorrecta");
         }
@@ -39,7 +42,12 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public float basalMetabolicRate(float weight, int height, Gender gender, int age) throws Exception {
+    public float basalMetabolicRate(Person person) throws Exception {
+        float height= person.height();
+        Gender gender= person.gender();
+        float weight= person.weight();
+        int age= person.age();
+        
         if (height <= 0) {
             throw new Exception("La altura indicada es incorrecta");
         }
