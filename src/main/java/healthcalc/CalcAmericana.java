@@ -7,13 +7,13 @@ public class CalcAmericana extends CalcDecorador{
     }
 
     @Override
-    public double bmr(Gender genero, int edad, float altura, int peso) throws Exception {
+    public double bmr(char genero, int edad, float altura, int peso) throws Exception {
         
         return super.bmr(genero, edad, alturaMetros(altura), pesoGramos(peso));
     }
 
     @Override
-    public int pesoIdeal(Gender genero, float altura) throws Exception {
+    public int pesoIdeal(char genero, float altura) throws Exception {
         return super.pesoIdeal(genero, alturaMetros(altura));
     }
 

@@ -9,14 +9,14 @@ public abstract class MensajeDecorador implements HealthHospital {
     }
 
     @Override
-    public double bmr(Gender genero, int edad, float altura, int peso) throws Exception {
+    public double bmr(char genero, int edad, float altura, int peso) throws Exception {
         double result= calc.bmr(genero, edad, altura, peso);
         mensaje(altura, peso, result);
         return result;
     }
 
     @Override
-    public int pesoIdeal(Gender genero, float altura) throws Exception {
+    public int pesoIdeal(char genero, float altura) throws Exception {
         return calc.pesoIdeal(genero, altura);
     }
 
