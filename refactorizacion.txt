@@ -28,3 +28,24 @@ y para los test parametrizados en HealthCalcTest.java
 ========================================================================================================
 
 Interfaz persona
+(1) nombre
+Long Parameter List
+
+(2) refactoring aplicado
+Reemplazar los parámetros por un objeto
+
+(3) tipo
+Refactoring de clase
+
+(4) descripción de cambios
+Creamos una interfaz Person y una implementación de la misma PersonImpl, que tendrá por atributos los parámetros necesario para los métodos de nuestra calculadora.
+Se ha creado dos constructores pensado en cada uno de estos métodos y los parámetros que necesitan. Se deberán modificar las entradas de los métodos de la calculadora y la implementación correspondientemente.
+
+(5) número de cambios
+- creación de la interfaz e implementación.
+- modifaciones de las entradas de los metodos
+- modificación de la implementacion de bmr y pesoIdeal en HealthCalcImpl
+- modficacion en Contralador (creacion PersonImpl)
+- cambios en el Adaptador.java
+- cambias en HealthCalcTest
+
