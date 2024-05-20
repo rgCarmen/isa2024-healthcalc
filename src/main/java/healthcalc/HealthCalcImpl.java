@@ -1,6 +1,6 @@
 package healthcalc;
 
-public class HealthCalcImpl implements HealthCalc {
+public class HealthCalcImpl implements CardioVascularMetrics, MetabolicMetrics {
 
     private static HealthCalcImpl calc;
 
@@ -16,8 +16,8 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public float idealWeight(Person person) throws Exception {
-        float result;
+    public double getIdealBodyWeight(Person person) throws Exception {
+        double result;
         float height= person.height();
         Gender gender= person.gender();
          
@@ -26,10 +26,10 @@ public class HealthCalcImpl implements HealthCalc {
         }
         switch (gender) {
             case MALE:
-                result = (height - 100) - ((height - 150) / 4f);
+                result = (height - 100) - ((height - 150) / 4d);
                 break;
             case FEMALE:
-                result = (height - 100) - ((height - 150) / 2.5f);
+                result = (height - 100) - ((height - 150) / 2.5d);
                 break;
             default:
                 throw new Exception("El género indicado es incorrecto");
@@ -42,7 +42,7 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public float basalMetabolicRate(Person person) throws Exception {
+    public double basalMetabolicRate(Person person) throws Exception {
         float height= person.height();
         Gender gender= person.gender();
         float weight= person.weight();
@@ -61,9 +61,9 @@ public class HealthCalcImpl implements HealthCalc {
 
         switch (gender) {
             case MALE:
-                return 10 * weight + 6.25f * height - 5 * age + 5;
+                return 10 * weight + 6.25d * height - 5 * age + 5;
             case FEMALE:
-                float result = 10 * weight + 6.25f * height - 5 * age - 161;
+                double result = 10 * weight + 6.25d * height - 5 * age - 161;
                 if (result < 0) {
                     throw new Exception(
                             "La combinación de valores indicados para mujer, generan un valor negativo de tasa metabólica");
