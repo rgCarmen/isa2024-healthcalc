@@ -48,7 +48,7 @@ Se ha creado dos constructores pensado en cada uno de estos métodos y los pará
 - creación de la interfaz e implementación.
 - modifaciones de las entradas de los métodos por un objeto Person (5 clases)
 - modificación de la implementacion de bmr y pesoIdeal en HealthCalcImpl para extraer los parametros necesarios.
-- modficacion en Contralador (creación PersonImpl)
+
 
 
 ==============================================================================================================================
