@@ -153,9 +153,8 @@ Para implementar una versión de la calculadora america y una europea reutilizan
 [Ver Practica 7](../../tree/practica7)
 ## :arrows_clockwise: Refactorizaciones
 <a name="ref"></a>
-# Resumen de Refactorizaciones
 
-## Enum Gender
+### Enum Gender
 
 1. **Nombre**: Representación inadecuada del tipo de dato de la variable.
 2. **Refactoring aplicado**: Modificación del tipo de datos de una variable.
@@ -176,7 +175,7 @@ Para implementar una versión de la calculadora america y una europea reutilizan
 
 ---
 
-## Interfaz Persona
+### Interfaz Persona
 
 1. **Nombre**: Long Parameter List
 2. **Refactoring aplicado**: Reemplazar los parámetros por un objeto.
@@ -188,12 +187,11 @@ Para implementar una versión de la calculadora america y una europea reutilizan
 5. **Número de cambios**:
    - Creación de la interfaz e implementación.
    - Modificaciones de las entradas de los métodos por un objeto `Person` (5 clases).
-   - Modificación de la implementación de `bmr` y `pesoIdeal` en `HealthCalcImpl` para extraer los parámetros necesarios.
-   - Modificación en `Controlador` (creación `PersonImpl`).
+   - Modificación de la implementación de `bmr` y `idealWeight` en `HealthCalcImpl` para extraer los parámetros necesarios.
 
 ---
 
-## CardioVascularMetrics
+### CardioVascularMetrics
 
 1. **Nombre**: Large Interface
 2. **Refactoring aplicado**: Interface Segregation
@@ -201,7 +199,7 @@ Para implementar una versión de la calculadora america y una europea reutilizan
 4. **Descripción de cambios**:
    - Crear la interfaz `CardioVascularMetrics` que contiene el método `getIdealBodyWeight`.
    - La clase `HealthCalcImpl` implementará esta interfaz y este método sustituirá a `idealWeight` de `HealthCalc`.
-   - Realizar los cambios correspondientes, cambiar el nombre del método, en las clases que utilizan este método, interfaz gráfica, test y adaptador.
+   - Realizar los cambios correspondientes, cambiar el nombre del método, en las clases que utilizan este método, interfaz gráfica, `HealthCalcTest` y `Adaptador`.
    - Este método devuelve el resultado como `double` en vez de `float`, por lo que se deberán cambiar correspondientemente los tipos.
 5. **Número de cambios**:
    - Creación de la interfaz `CardioVascularMetrics`.
@@ -212,7 +210,7 @@ Para implementar una versión de la calculadora america y una europea reutilizan
 
 ---
 
-## MetabolicMetrics
+### MetabolicMetrics
 
 1. **Nombre**: Large Interface
 2. **Refactoring aplicado**: Interface Segregation
