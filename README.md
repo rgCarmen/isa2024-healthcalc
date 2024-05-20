@@ -153,5 +153,77 @@ Para implementar una versión de la calculadora america y una europea reutilizan
 [Ver Practica 7](../../tree/practica7)
 ## :arrows_clockwise: Refactorizaciones
 <a name="ref"></a>
+# Resumen de Refactorizaciones
 
+## Enum Gender
 
+1. **Nombre**: Representación inadecuada del tipo de dato de la variable.
+2. **Refactoring aplicado**: Modificación del tipo de datos de una variable.
+3. **Tipo**: Refactoring de atributo.
+4. **Descripción de cambios**:
+   - Creación de la clase enumerada `Gender` que sustituirá a `char gender` en la implementación de los métodos de la calculadora.
+   - Dado que los valores que puede tomar este atributo son un conjunto fijo (hombre o mujer), es más adecuado utilizar `Enum`. Esto permitirá también evitar posibles errores al introducir los parámetros en la calculadora.
+   - Se deben cambiar los `char 'm'` y `'w'` por los valores correspondientes de `Gender`.
+5. **Número de cambios**:
+   - Creación de `Gender`.
+   - Cambiar `char` por `Gender` en 5 clases.
+   - Reemplazar `'m'` por `Gender.MALE` en 3 clases.
+   - Reemplazar `'w'` por `Gender.FEMALE` en 3 clases.
+   - Reemplazar `Gender.` por nada en `HealthCalcImpl.java` para los `switch` (no funciona como `Gender.FEMALE` o `Gender.MALE`) y para los test parametrizados en `HealthCalcTest.java`.
+   - Añadir `import healthcalc.Gender;` en `Controlador.java` y `Vista.java` (2 clases).
+   - Eliminar test que prueban si la entrada de `Gender` es distinta a `FEMALE` o `MALE`.
+   - Crear un método en Adaptador para elegir el valor de `Gender`.
+
+---
+
+## Interfaz Persona
+
+1. **Nombre**: Long Parameter List
+2. **Refactoring aplicado**: Reemplazar los parámetros por un objeto.
+3. **Tipo**: Refactoring de clase.
+4. **Descripción de cambios**:
+   - Crear una interfaz `Person` y una implementación de la misma `PersonImpl`, que tendrá por atributos los parámetros necesarios para los métodos de nuestra calculadora.
+   - Se han creado dos constructores pensando en cada uno de estos métodos y los parámetros que necesitan.
+   - Se deberán modificar las entradas de los métodos de la calculadora y la implementación correspondiente.
+5. **Número de cambios**:
+   - Creación de la interfaz e implementación.
+   - Modificaciones de las entradas de los métodos por un objeto `Person` (5 clases).
+   - Modificación de la implementación de `bmr` y `pesoIdeal` en `HealthCalcImpl` para extraer los parámetros necesarios.
+   - Modificación en `Controlador` (creación `PersonImpl`).
+
+---
+
+## CardioVascularMetrics
+
+1. **Nombre**: Large Interface
+2. **Refactoring aplicado**: Interface Segregation
+3. **Tipo**: Refactorización de clase (interfaz).
+4. **Descripción de cambios**:
+   - Crear la interfaz `CardioVascularMetrics` que contiene el método `getIdealBodyWeight`.
+   - La clase `HealthCalcImpl` implementará esta interfaz y este método sustituirá a `idealWeight` de `HealthCalc`.
+   - Realizar los cambios correspondientes, cambiar el nombre del método, en las clases que utilizan este método, interfaz gráfica, test y adaptador.
+   - Este método devuelve el resultado como `double` en vez de `float`, por lo que se deberán cambiar correspondientemente los tipos.
+5. **Número de cambios**:
+   - Creación de la interfaz `CardioVascularMetrics`.
+   - `HealthCalcImpl` implementa esta interfaz (1 línea).
+   - Reemplazar `idealWeight` por `getIdealBodyWeight` en `HealthCalcImpl`, `Controlador`, `Adaptador` y `HealthCalcTest`.
+   - Cambiar el tipo del resultado a `double` (4 clases).
+   - Debido a este cambio, modificar el tipo del parámetro de entrada de `setResultPI` en `Vista` (1 línea).
+
+---
+
+## MetabolicMetrics
+
+1. **Nombre**: Large Interface
+2. **Refactoring aplicado**: Interface Segregation
+3. **Tipo**: Refactorización de clase (interfaz).
+4. **Descripción de cambios**:
+   - Crear la interfaz `MetabolicMetrics` que contiene el método `basalMetabolicRate`.
+   - La clase `HealthCalcImpl` implementará esta interfaz y este método tiene el mismo nombre que el método correspondiente de la interfaz `HealthCalc`, lo único que cambia es que devuelve `double` como resultado.
+   - Realizar este cambio de tipos donde sea necesario. Con este cambio y el anterior se puede eliminar la interfaz `HealthCalc`.
+5. **Número de cambios**:
+   - Creación de la interfaz `MetabolicMetrics`.
+   - `HealthCalcImpl` implementa esta interfaz (1 línea).
+   - Cambiar el tipo del resultado a `double` (3 clases).
+   - Debido a este cambio, modificar el tipo del parámetro de entrada de `setResultPI` en `Vista`.
+   - Eliminar `casting` innecesario en el Adaptador (1 línea).

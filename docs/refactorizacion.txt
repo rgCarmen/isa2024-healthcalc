@@ -94,7 +94,7 @@ Refactorización de clase (interfaz)
 (4) descripción de cambios
 Se crea la interfaz MetabolicMetrics que contiene el método basalMetabolicRate. 
 La clase HealthCalcImpl implementará esta interfaz y este método tiene el mismo nombre que el método correspondiente de la interfaz HealthCalc, lo único que cambia es que devuelve double como resultado.
-Se deberán realizar este cambio de tipos donde sea necesario.
+Se deberán realizar este cambio de tipos donde sea necesario. Con este cambio y el anterior se puede eliminar la interfaz HealthCalc.
 
 (5) número de cambios
 - creación de la interfaz MetabolicMetrics
@@ -102,6 +102,7 @@ Se deberán realizar este cambio de tipos donde sea necesario.
 - cambiar el tipo del resultado a double (3 clases)
 - debido a este cambio modificar el tipo del parametro de entrada de setResultPI Vista
 - castin ineccesario en el Adaptador (1 línea)
+
 
 
 
