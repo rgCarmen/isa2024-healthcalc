@@ -20,6 +20,10 @@
             <li><a href="#hospital">Implementación Hospital Costal del Sol</a></li>
         </ol>
         </li>
+      <li><a href="#practica7">Práctica7</a>
+        <ol> <li><a href="#ref">Refactorizaciones</a></li>
+        </ol>
+        </li>
     </ol>
 </details>
 
@@ -42,8 +46,8 @@ Además del desarrollo de la calculadora, esta práctica aborda el uso de herram
 #### **Test para el método <code>idealWeight()</code>**
 <ol>
 <li> El valor de <code>height</code> introducido no es válido, es menor o igual que 0. Se espera que se lance una excepción indicando este hecho.</li>
-<li>Para valores de <code>height</code>  válidos, el valor de <code>gender</code> introducido es inválido, es decir es un carácter distinto de <code>'m'</code>  o  <code>'w'</code> . Se espera que se lance una excepción indicando que el género introducido no es correcto.</li>
-<li>Ambas entradas son válidas, <code>gender</code> es  <code>'m'</code>  o  <code>'w'</code>  y <code>height</code>  tiene un valor mayor que 0. Se espera que no se lance ninguna excepción y se obtenega un resultado positivo.
+<li>Para valores de <code>height</code>  válidos, el valor de <code>gender</code> introducido es inválido, es decir es un carácter distinto de <code>Gender.MALE</code>  o  <code>Gender.FEMALE</code> . Se espera que se lance una excepción indicando que el género introducido no es correcto.</li>
+<li>Ambas entradas son válidas, <code>gender</code> es  <code>Gender.MALE</code>  o  <code>Gender.FEMALE</code>  y <code>height</code>  tiene un valor mayor que 0. Se espera que no se lance ninguna excepción y se obtenega un resultado positivo.
 <ul><li>Con la fórmula utilizada para calcular el peso ideal, puede ocurrir que con valores pequeños de altura se obtengan como resultado valores negativos de peso. Para hombres este límite inferior es $83.\overline{3}$ y para mujeres $66.\overline{6}$ . Obtener un peso negativo no tendría ningún sentido, por lo que se debería reflejar en la implentación y lanzar una excepción cuando ocurra.</li> </ul>
 </li>
 <li> Para entradas válidas en ambos atributos, y con el mismo valor de  <code>height</code> para ambos géneros:
@@ -140,5 +144,14 @@ Para implementar una versión de la calculadora america y una europea reutilizan
 
 ![](https://github.com/rgCarmen/isa2024-healthcalc/blob/practica6/design_patterns/UML_decoradores3c.png)
 
+---
+
+---
+
+# Práctica 7. Refactorings
+<a name="practica7"></a>
+[Ver Practica 7](../../tree/practica7)
+## :arrows_clockwise: Refactorizaciones
+<a name="ref"></a>
 
 

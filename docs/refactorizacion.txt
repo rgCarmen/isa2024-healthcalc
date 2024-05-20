@@ -1,0 +1,107 @@
+REFACTORIZACIONES
+
+====================================================================================================
+ Enum Gender
+(1) nombre
+Representación inadecuada del tipo de dato de la variable.
+
+(2) refactoring aplicado
+Modificación del tipo de datos de una variable.
+
+(3) tipo
+Refactoring de atributo.
+
+(4) descripción de cambios
+Creación de la clase enumerada Gender que sustituirá en a char gender en la implementación de los métodos de la calculadora. 
+Ya que los valores que puede tomar este atributo son un conjunto fijo, hombre o mujer, es más adecuado utilizar Enum. Va a permitir también evitar posibles errores al introducir los parametros en la calculadora.
+También se debe cambiar los char 'm' y 'w' por los valores de Gender correspondiente.
+
+(5) número de cambio 
+- creación de Gender.
+- cambiamos char por Gender en 5 clases. 
+- reemplazar 'm' por Gender.MALE en 3 clases.
+- reemplazar 'w' por Gender.FEMALE en 3 clases.
+- reemplazar Gender. por nada en HealthCalcImpl.java para los switch (no funciona como Gender.FEMALE o Gender.MALE)
+y para los test parametrizados en HealthCalcTest.java
+- añadimos import healthcalc.Gender; en Controlador.java y Vista.java (2 clases)
+- eliminar test que prueban si la entrada de Gender es distinta a FEMALE o MALE.
+- crear un método en Adaptador para elegir el valor de Gender
+
+
+========================================================================================================
+
+Interfaz persona
+(1) nombre
+Long Parameter List
+
+(2) refactoring aplicado
+Reemplazar los parámetros por un objeto
+
+(3) tipo
+Refactoring de clase.
+
+(4) descripción de cambios
+Creamos una interfaz Person y una implementación de la misma PersonImpl, que tendrá por atributos los parámetros necesario para los métodos de nuestra calculadora.
+Se ha creado dos constructores pensado en cada uno de estos métodos y los parámetros que necesitan. Se deberán modificar las entradas de los métodos de la calculadora y la implementación correspondientemente.
+
+(5) número de cambios
+- creación de la interfaz e implementación.
+- modifaciones de las entradas de los métodos por un objeto Person (5 clases)
+- modificación de la implementacion de bmr y pesoIdeal en HealthCalcImpl para extraer los parametros necesarios.
+- modficacion en Contralador (creación PersonImpl)
+
+
+==============================================================================================================================
+
+CardioVascularMetrics
+(1) nombre
+Large Interfaz
+
+(2) refactoring aplicado
+interface segregation
+
+(3) tipo
+Refactorización de clase (interfaz)
+
+
+(4) descripción de cambios
+Se crea la interfaz CardioVascularMetrics que contiene el método getidealbodyweight. La clase HealthCalcImpl implementará esta interfaz y este método sustituirán a idealWeigth de HealthCalc. 
+Se deberán realizar los cambios correspondientes, cambiar el nombre del método, en las clases que utilizan este método, interfaz gráfica, test y adaptador. 
+Este método devuelve el resultado como double en vez de float, por lo que se deberán cambiar correspondientemente los tipos.
+
+(5) número de cambios
+- creación de la interfaz CardioVascularMetrics
+- HealthCalcImpl implementa esta interfaz (1 línea)
+- reemplazar idealWeigth por getidealbodyweight en HealthCalcImpl, Controlador, Adaptador y HealthCalcTest
+- cambiar el tipo del resultado a double (4 clases)
+- debido a este cambio modificar el tipo del parametro de entrada de setResultPI Vista (1 línea)
+
+
+
+==============================================================================================================================
+
+MetabolicMetrics
+(1) nombre
+Large Interfaz
+
+(2) refactoring aplicado
+interface segregation
+
+(3) tipo
+Refactorización de clase (interfaz)
+
+
+(4) descripción de cambios
+Se crea la interfaz MetabolicMetrics que contiene el método basalMetabolicRate. 
+La clase HealthCalcImpl implementará esta interfaz y este método tiene el mismo nombre que el método correspondiente de la interfaz HealthCalc, lo único que cambia es que devuelve double como resultado.
+Se deberán realizar este cambio de tipos donde sea necesario.
+
+(5) número de cambios
+- creación de la interfaz MetabolicMetrics
+- HealthCalcImpl implementa esta interfaz (1 línea)
+- cambiar el tipo del resultado a double (3 clases)
+- debido a este cambio modificar el tipo del parametro de entrada de setResultPI Vista
+- castin ineccesario en el Adaptador (1 línea)
+
+
+
