@@ -25,7 +25,7 @@ public class Controlador implements ActionListener {
 			int altura = vista.getAltura();
 			Gender genero= vista.getGenero();
 			try {
-				float resultado = modelo.idealWeight(new PersonImpl(altura, genero));	
+				double resultado = modelo.getIdealBodyWeight(new PersonImpl(altura, genero));	
 				vista.setResultPI(resultado);
 			} catch (Exception error) {
 				String msg= comando+": "+error.getMessage();
@@ -38,7 +38,7 @@ public class Controlador implements ActionListener {
 			int edad= vista.getEdad();
 			float peso= vista.getPeso();
 			try {
-				float resultado = modelo.basalMetabolicRate(new PersonImpl(peso, altura, edad, genero) {
+				double resultado = modelo.basalMetabolicRate(new PersonImpl(peso, altura, edad, genero) {
 				});	
 				vista.setResultBMR(resultado);
 			} catch (Exception error) {

@@ -12,12 +12,12 @@ public class Adaptador implements HealthHospital{
         //peso esta en gramos y debemos pasarlo a kiligramos
         //altura esta en metros y debemos pasarla a centimetros
         
-        return (double) calc.basalMetabolicRate(new PersonImpl(peso/1000f, (altura*100), edad, getGender(genero)));
+        return calc.basalMetabolicRate(new PersonImpl(peso/1000f, (altura*100), edad, getGender(genero)));
     }
 
     @Override
     public int pesoIdeal(char genero, float altura) throws Exception{
-        float result =  calc.idealWeight(new PersonImpl((altura*100), getGender(genero)));
+        double result =  calc.getIdealBodyWeight(new PersonImpl((altura*100), getGender(genero)));
         //el resultado esta en kilogramos y lo tenemos que pasar a gramos
         return  (int) result*1000;
     }

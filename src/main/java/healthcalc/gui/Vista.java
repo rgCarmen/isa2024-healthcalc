@@ -233,11 +233,11 @@ public class Vista extends JFrame{
 	}
 	
 	
-	public void setResultBMR(float resultado) {
+	public void setResultBMR(double resultado) {
 		resultBMR.setText(String.valueOf(resultado)+" cal/día");
 	}
 	
-	public void setResultPI(float resultado){
+	public void setResultPI(double resultado){
 		resultPesoIdeal.setText(String.valueOf(resultado)+" kg");
 	}
 	
